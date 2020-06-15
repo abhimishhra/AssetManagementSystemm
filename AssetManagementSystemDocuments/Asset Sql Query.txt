@@ -1,0 +1,50 @@
+----------------create table--------------------------------
+
+create table UserMaster(
+User_id	Varchar2(5)	constraint pk_userMaster_username Primary key,
+user_name	Varchar(25)	constraint	nn_userMaster_username  Not null,	
+user_password	Varchar2(25)	constraint	nn_userMaster_userPassword Not null,
+user_type	Varchar(20)	constraint      nn_userMaster_usertype  Not null,
+);
+
+
+create table employee(
+emp_no	Number(10)	constraint  pk_employee_empno Primary key,
+ename	Varchar(5)	constraint  nn_employee_ename Not null,
+job	Varchar(10)	constraint  nn_employee_job Not null,
+manager_id	varchar2(26)	constraint  nn_employee_managerid Not null,
+hire_date	date	constraint  nn_employee_hiredate Not null,
+dept_id	varchar2(25)	constraint  nn_employee_deptid Not null,
+salary varchar2(25) constraint nn_employee_salary Not null,
+);
+
+
+create table asset(
+asset_id number(6)	constraint pk_asset_aasetid Primary key
+asset_name  Varchar(20)	constraint  nn_asset_assetname Not null
+Asset_Des  Varchar2(25)	constraint  nn_asset_assetdes Not null
+quantity  Number(8)	constraint  nn_asset_quantity  Not null
+status	varchar2(25)	constraint  nn_asset_status  Not null
+);
+
+
+create table asset_allocation(
+allocation_id Number	constraint  pk_assetallocation_alloactionid Primary key,
+asset_name  Varchar(10)	constraint  nn_assetallocation_asssetname Not null,
+emp_no Varchar(5)	constraint  nn_assetallocation_empno Not null,
+allocation_date	date	constraint  nn_assetallocation_allocationdate Not null,
+realease_date  date	constraint  nn_assetallocation_releasedate Not null
+
+);
+
+----------------------------------------------------------------------------------------------------------------------------------------
+insert into UserMaster(101,'Abhishek',987456,'Admin');
+
+
+insert into employee(501,'Samiran','Analyst',401,to_date('2020/02/13','yyyy/mm/dd'),301,30000);
+
+
+insert into asset(1001,'Mouse','Company:dell',1,'proccessing');
+
+insert into asset_alloocation(601,'Laptop',501,to_date('2020/05/13','yyyy/mm/dd'),to_date('2020/06/14','yyyy/mm/dd');
+
